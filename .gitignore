@@ -25,3 +25,10 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+*.tfvars
+*.tfvars.json
