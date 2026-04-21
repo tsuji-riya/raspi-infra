@@ -20,3 +20,13 @@ resource "cloudflare_zero_trust_tunnel_cloudflared_config" "raspi-k3s-api_config
     ]
   }
 }
+
+data "cloudflare_zero_trust_tunnel_cloudflared_token" "raspi-k3s-api_token" {
+  account_id = local.cloudflare_account_id
+  tunnel_id  = cloudflare_zero_trust_tunnel_cloudflared.raspi-k3s-api_app.id
+}
+
+output "cloudflare_tunnel_token" {
+  value     = data.cloudflare_zero_trust_tunnel_cloudflared_token.raspi-k3s-api_token.token
+  sensitive = true
+}
