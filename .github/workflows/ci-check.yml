@@ -1,0 +1,28 @@
+name: ci-check.yaml
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["*"]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v4
+
+      - name: Terraform init
+        run: terraform init
+        working-directory: ./terraform
+
+      - name: Check .tf files format
+        run: terraform fmt -check -recursive
+        working-directory: ./terraform
+
+      - name: Check .tf files for errors
+        run: terraform validate
+        working-directory: ./terraform
