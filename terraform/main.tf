@@ -1,14 +1,14 @@
 terraform {
   required_providers {
     cloudflare = {
-      source = "cloudflare/cloudflare"
+      source  = "cloudflare/cloudflare"
       version = "~> 5"
     }
   }
 }
 
 locals {
-  cloudflare_zone_id = "3ad0619381ef2fcb5a1bbca6a88b782d"
+  cloudflare_zone_id    = "3ad0619381ef2fcb5a1bbca6a88b782d"
   cloudflare_account_id = "c4ae140fd7a6950a6e72ffb33207f473"
 }
 
@@ -25,5 +25,5 @@ variable "tunnel_secret" {
 }
 
 provider "cloudflare" {
-  api_token   = var.cloudflare_api_token
+  api_token = var.cloudflare_api_token
 }

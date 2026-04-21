@@ -1,14 +1,14 @@
 resource "cloudflare_zero_trust_access_application" "raspi-k3s-api" {
-  domain = "raspi-k3s-api.riya.work"
-  type = "self_hosted"
-  zone_id = local.cloudflare_zone_id
+  domain               = "raspi-k3s-api.riya.work"
+  type                 = "self_hosted"
+  zone_id              = local.cloudflare_zone_id
   app_launcher_visible = false
   destinations = [{
     type = "public"
-    uri = "raspi-k3s-api.riya.work"
+    uri  = "raspi-k3s-api.riya.work"
   }]
   policies = [{
-    id = cloudflare_zero_trust_access_policy.raspi-k3s-api.id
+    id         = cloudflare_zero_trust_access_policy.raspi-k3s-api.id
     precedence = 1
   }]
 }
