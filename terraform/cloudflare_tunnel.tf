@@ -1,6 +1,6 @@
 resource "cloudflare_zero_trust_tunnel_cloudflared" "raspi_k3s" {
-  account_id    = local.cloudflare_account_id
-  name          = "raspi-k3s"
+  account_id = local.cloudflare_account_id
+  name       = "raspi-k3s"
 }
 
 resource "cloudflare_zero_trust_tunnel_cloudflared_config" "raspi_k3s" {
