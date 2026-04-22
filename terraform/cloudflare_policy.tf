@@ -10,4 +10,3 @@ resource "cloudflare_zero_trust_access_policy" "raspi_k3s_api" {
     }
   ]
 }
-

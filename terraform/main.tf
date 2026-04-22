@@ -21,7 +21,7 @@ provider "cloudflare" {
 }
 
 provider "kubernetes" {
-  host = "https://127.0.0.1:6443"
+  host                   = "https://127.0.0.1:6443"
   client_certificate     = var.kubernetes_client_certificate
   client_key             = var.kubernetes_client_key
   cluster_ca_certificate = var.kubernetes_cluster_ca_certificate

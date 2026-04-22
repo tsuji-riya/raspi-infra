@@ -12,4 +12,3 @@ resource "cloudflare_zero_trust_access_application" "raspi_k3s_api" {
     precedence = 1
   }]
 }
-
