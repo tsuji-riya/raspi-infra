@@ -1,7 +1,7 @@
-resource "cloudflare_dns_record" "raspi_k3s" {
+resource "cloudflare_dns_record" "raspi_k3s_api" {
   zone_id = local.cloudflare_zone_id
-  name    = "raspi-k3s.riya.work"
-  content = "${cloudflare_zero_trust_tunnel_cloudflared.raspi_k3s.id}.cfargotunnel.com"
+  name    = "raspi-k3s-api.riya.work"
+  content = "${cloudflare_zero_trust_tunnel_cloudflared.raspi_k3s_api.id}.cfargotunnel.com"
   type    = "CNAME"
   proxied = true
   ttl     = 1
